@@ -13,6 +13,7 @@ const ast = recast.parse(code, {
       allowReturnOutsideFunction: true,
       startLine: 1,
       tokens: true,
+      retainLines: true,
       plugins: [
         "asyncGenerators",
         "bigInt",
@@ -43,14 +44,20 @@ const ast = recast.parse(code, {
   }
 });
 
+recast.visit(ast, {
+  visitImportDeclaration(path) {
+    path.prune();
+    return false;
+  },
 
-const result = babel.transformFromAstSync(ast, code, {
-  ast: true,
-  plugins: ["./plugins/codemod"],
+  visitFunctionDeclaration(path) {
+    path.prune();
+    return false;
+  }
 });
 
-const printResult = recast.print(result.ast);
+const printResult = recast.print(ast);
 const output = printResult.code;
 
 fs.mkdirSync("tmp", { recursive: true });
-fs.writeFileSync("./tmp/output.jsx", output);
+fs.writeFileSync("./tmp/output.jsx", output, "utf-8");

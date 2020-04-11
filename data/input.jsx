@@ -8,8 +8,13 @@ export interface Props {
 const a: number = (3 + 4);
 
 function Component() {
+  const xyz = "true"
+    ? "hey"
+    : "nope";
+
   return (
     <A>
+      {xyz}
       <B />
       {a}
     </A>
