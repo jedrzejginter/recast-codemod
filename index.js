@@ -1,6 +1,5 @@
 const fs = require("fs");
 const recast = require("recast");
-const babel = require("@babel/core");
 
 const code = fs.readFileSync("./data/input.jsx", "utf-8");
 
