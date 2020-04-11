@@ -48,11 +48,6 @@ recast.visit(ast, {
     path.prune();
     return false;
   },
-
-  visitFunctionDeclaration(path) {
-    path.prune();
-    return false;
-  }
 });
 
 const printResult = recast.print(ast);
