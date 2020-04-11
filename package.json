@@ -1,5 +1,5 @@
 {
-  "name": "ast-recast",
+  "name": "recast-codemod",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Jedrzej Ginter <dzeejj@gmail.com> (https://github.com/jedrzejginter)",
