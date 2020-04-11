@@ -1,0 +1,12 @@
+{
+  "name": "ast-recast",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jedrzej Ginter <dzeejj@gmail.com> (https://github.com/jedrzejginter)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.9.0",
+    "@babel/parser": "7.9.4",
+    "recast": "0.19.0"
+  }
+}
